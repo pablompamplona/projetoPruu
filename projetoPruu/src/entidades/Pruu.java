@@ -50,9 +50,7 @@ public class Pruu {
 	public boolean validarTexto(String texto) {
 		if ((texto.length() > 300) || (texto.trim().length() < 1)) {
 			textoValido = false;
-		} else {
-			textoValido = true;
-		}
+		} 
 		return textoValido;
 	}
 	
