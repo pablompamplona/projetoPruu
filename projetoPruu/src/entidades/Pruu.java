@@ -14,25 +14,15 @@ public class Pruu {
 	private int qtdLikes;
 	private boolean bloqueado;
 	private Usuario usuario;
-	private boolean textoValido;
+	private boolean textoValido = true;
 	
 	
-		
 	public Pruu() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
-	public boolean validarTexto(String texto) {
-		if (texto.length() > 300) {
-			textoValido = false;
-		} if (texto.trim().length() < 1) {
-			textoValido = false;
-		} else {
-			textoValido = true;
-		}
-		return textoValido;
-	}
+	
 	public Pruu(String texto, Usuario usuario) {
 		super();
 		validarTexto(texto);
@@ -56,6 +46,15 @@ public class Pruu {
 				
 	}
 	//metodos
+	
+	public boolean validarTexto(String texto) {
+		if ((texto.length() > 300) || (texto.trim().length() < 1)) {
+			textoValido = false;
+		} else {
+			textoValido = true;
+		}
+		return textoValido;
+	}
 	
 	public void adicionarLike() {
 		this.qtdLikes++;
@@ -91,6 +90,14 @@ public class Pruu {
 		this.bloqueado = bloqueado;
 	}
 
+
+	public boolean isTextoValido() {
+		return textoValido;
+	}
+
+	public void setTextoValido(boolean textoValido) {
+		this.textoValido = textoValido;
+	}
 
 	@Override
 	public String toString() {
