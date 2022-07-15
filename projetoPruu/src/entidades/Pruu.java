@@ -95,11 +95,12 @@ public class Pruu {
 	@Override
 	public String toString() {
 		if (bloqueado) {
-			return "Esse pruu foi bloqueado por descumprir \nas normas do portal!!!";
+			return "\nID:" + idPruu + "\nEsse pruu foi bloqueado por descumprir \nas normas do portal!!!" + "\nPostado em " + dataFormatada
+					 + "\nPostado por: " + usuario + "\n";
 		} else {
 			
 		return "\nID:" + idPruu + "\nPruuuuuu: " + texto + "\nPostado em " + dataFormatada + "\n" + qtdLikes
-				+ " curtidas" + "\nPostado por: " + usuario;
+				+ " curtidas" + "\nPostado por: " + usuario + "\n";
 		}
 	}
 
